@@ -1,5 +1,3 @@
-$.getScript("jquery-mobile-swipe-min.js");
-
 function initPhotoViewer(){
 	var photoFrame;
 	var closeButton;
@@ -52,10 +50,10 @@ function initPhotoViewer(){
 				$("<h2></h2>").text("Loading").appendTo(loadingIcon));
 			centerLoadingIcon();
 			$(window).on("resize.photoViewer.loadingIcon", centerLoadingIcon);
-		}
 		
-		function centerLoadingIcon(){
-			centerElement(loadingIcon);
+			function centerLoadingIcon(){
+				centerElement(loadingIcon);
+			}
 		}
 		
 		function deleteLoadingIcon(){
@@ -72,7 +70,7 @@ function initPhotoViewer(){
 				photoSource = thumbnailSource;
 			}
 			photoImage = $("<img />").attr("id", "Photo").attr("src", photoSource).attr("alt", callerImage.attr("alt")).appendTo(photoFrame);
-			photoCaption = $("<div></div>").attr("id", "PhotoCaption").html("<h6>" + callerImage.attr("title") + "</h6><p>" + callerImage.attr("alt") + "</p>").appendTo(photoFrame);
+			photoCaption = $("<div></div>").attr("id", "PhotoCaption").html("<h6 style=\"font-size: 16px; margin: 3.20px 0px;\">" + callerImage.attr("title") + "</h6><p style=\"font-size: 16px;\">" + callerImage.attr("alt") + "</p>").appendTo(photoFrame);
 			if(photoFrame.data("isGallery")){
 				photoButtonLeft = $("<div></div>").attr("id", "PhotoButtonLeft").appendTo(photoFrame).click(function(event){event.stopPropagation(); switchPhoto(prevPhoto);}).css("opacity", 0.9);
 				photoButtonRight = $("<div></div>").attr("id", "PhotoButtonRight").appendTo(photoFrame).click(function(event){event.stopPropagation(); switchPhoto(nextPhoto);}).css("opacity", 0.9);
@@ -113,8 +111,8 @@ function initPhotoViewer(){
 			var photoImageLeft = parseFloat(photoImage.css("left"));
 			closeButton.css("top", photoImageTop + 1).css("left", photoImageLeft + photoBorderLeft + newWidth - 1);
 			if(photoFrame.data("isGallery")){
-				photoButtonLeft.height(newHeight).width(newWidth/5).css("top", photoImageTop + photoBorderTop).css("left", photoImageLeft + photoBorderLeft).css("lineHeight", newHeight + "px").css("fontSize", Math.ceil(newHeight/3) + "px");
-				photoButtonRight.height(newHeight).width(newWidth/5).css("top", photoImageTop + photoBorderTop).css("left", photoImageLeft + photoBorderLeft + (newWidth * 0.8)).css("lineHeight", newHeight + "px").css("fontSize", Math.ceil(newHeight/3) + "px");				
+				photoButtonLeft.height(newHeight).width(newWidth/5).css("top", photoImageTop + photoBorderTop).css("left", photoImageLeft + photoBorderLeft).css("lineHeight", newHeight + "px");//.css("fontSize", Math.ceil(newHeight/3) + "px");
+				photoButtonRight.height(newHeight).width(newWidth/5).css("top", photoImageTop + photoBorderTop).css("left", photoImageLeft + photoBorderLeft + (newWidth * 0.8)).css("lineHeight", newHeight + "px");//.css("fontSize", Math.ceil(newHeight/3) + "px");				
 			}
 			photoCaption.css("top", photoImageTop + photoBorderTop + newHeight);
 		}
