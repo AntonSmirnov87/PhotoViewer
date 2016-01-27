@@ -1,0 +1,22 @@
+div.PhotoGallery{margin: 0px; padding: 0px; width: 100%;}
+div.PhotoGallery img, img.HoverGlowTertiary{transition: box-shadow 1s;}
+div.PhotoGallery img:hover, a:hover img.HoverGlowTertiary, img.HoverGlowTertiary:hover{box-shadow: 0px 0px 15px 0px #0000FF !important; transition: box-shadow 1s;}
+img.PhotoViewer{border-radius: 15px; width: 100%;}
+img.PhotoViewer:hover{cursor: pointer;}
+
+div#PhotoFrame{background: rgba(0,0,0,0.9); display: none; position: fixed; text-align: center; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 300000; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moze-user-select: none; -ms-user-select: none; user-select: none;}
+div#PhotoFrame:hover{cursor: not-allowed;}
+div#CloseButton{border-radius: 14px; color: #FF0000; font-family: Consolas, monaco, monospace; font-size: 13px; font-weight: bold; height: 14px; line-height: 16px; position: absolute; width: 14px; z-index: 2;}
+div#CloseButton:hover{cursor: pointer; box-shadow: inset 1px 3px 0px #AAAAAA;}
+div#CloseButton:active{background: #AAAAAA; box-shadow: inset 1px 3px 0px #555555;}
+div#LoadingIcon{background: #FFFFFF; border-radius: 15px; height: 300px; overflow: hidden; position: fixed; text-align: center; vertical-align: middle; width: 300px; z-index: 300010}
+div#LoadingIcon h2{line-height: 50px; margin: 0px;}
+div#LoadingIcon img{height: 200px; width: 200px;}
+img#Photo{border-width: 15px 15px 85px 15px; border-style: solid; border-color: #FFFFFF; box-shadow: 0 0 50px 30px #000000; display: none; position: absolute; z-index: 1;}
+div#PhotoCaption{display: none; height: 75px; margin: 5px auto; position: absolute; text-align: center; width: 100%; z-index: 2;}
+div#PhotoCaption p{margin: 0px;}
+div#PhotoButtonLeft, div#PhotoButtonRight{background: #FFFFFF; display: none; opacity: 0; position: absolute; transition: opacity 1s; z-index: 2;}
+div#PhotoButtonLeft::after{font-family: monospace; content: "<";}
+div#PhotoButtonRight::after{font-family: monospace; content: ">";}
+img#Photo:hover ~ div#PhotoButtonLeft, img#Photo:hover ~ div#PhotoButtonRight{opacity: 0.1;}
+div#PhotoButtonLeft:hover, div#PhotoButtonRight:hover{cursor: pointer; opacity: 0.5;}
