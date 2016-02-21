@@ -12,7 +12,7 @@ function photoViewerExample(callback, numColumns, isPolaroid){
 			$("#ExampleGallery").html(xhttp.responseText);
 			callback();
 		} else {
-			$("#ExampleGallery").html("<p>An error has occurred. Please <a href=\"mailto:AntonSmirnov87@gmail.com\">the programmer</a> to let him know. Thanks!</p>");
+			$("#ExampleGallery").html("<p>An error has occurred. Please <a href=\"mailto:AntonSmirnov87@gmail.com\">contact the programmer</a> to let him know. Thanks!</p>");
 		}
 	};
 	xhttp.open("GET", "ExampleGallery.php?numColumns=" + numColumns + "&isPolaroid=" + isPolaroid, true);
