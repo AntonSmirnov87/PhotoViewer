@@ -93,11 +93,11 @@ function initPhotoViewer(){
 			var photoBorderLeft = parseFloat(photoImage.css("border-left-width"));
 			var photoBorderRight = parseFloat(photoImage.css("border-right-width"));
 			var photoBorderWidth = photoBorderLeft + photoBorderRight;
-			if(photoWidth > ($(document).width() - photoBorderWidth)){
-				newWidth = $(document).width() - photoBorderWidth;
+			if(photoWidth > ($(window).width() - photoBorderWidth)){
+				newWidth = $(window).width() - photoBorderWidth;
 			}
-			if(photoHeight >= ($(document).height() - photoBorderHeight)){
-				newHeight = $(document).height() - photoBorderHeight;
+			if(photoHeight >= ($(window).height() - photoBorderHeight)){
+				newHeight = $(window).height() - photoBorderHeight;
 			}
 			if((newWidth/newHeight) > photoRatio){
 				newWidth = newHeight * photoRatio;
@@ -122,7 +122,7 @@ function initPhotoViewer(){
 			var elementWidth = elementToCenter.width();
 			var elementBorderHeight = parseFloat(elementToCenter.css("border-top-width")) + parseFloat(elementToCenter.css("border-bottom-width"));
 			var elementBorderWidth = parseFloat(elementToCenter.css("border-left-width")) + parseFloat(elementToCenter.css("border-right-width"));
-			elementToCenter.css("top", (($(document).height() - elementHeight - elementBorderHeight))/2).css("left", ($(document).width() - elementWidth - elementBorderWidth)/2);
+			elementToCenter.css("top", (($(window).height() - elementHeight - elementBorderHeight))/2).css("left", ($(window).width() - elementWidth - elementBorderWidth)/2);
 		}
 		
 		function showPhoto(){
