@@ -114,15 +114,21 @@ function initPhotoViewer(){
 				photoButtonLeft.height(newHeight).width(newWidth/5).css("top", photoImageTop + photoBorderTop).css("left", photoImageLeft + photoBorderLeft).css("lineHeight", newHeight + "px");//.css("fontSize", Math.ceil(newHeight/3) + "px");
 				photoButtonRight.height(newHeight).width(newWidth/5).css("top", photoImageTop + photoBorderTop).css("left", photoImageLeft + photoBorderLeft + (newWidth * 0.8)).css("lineHeight", newHeight + "px");//.css("fontSize", Math.ceil(newHeight/3) + "px");				
 			}
-			photoCaption.css("top", photoImageTop + photoBorderTop + newHeight);
+			photoCaption.width(newWidth).css("top", photoImageTop + newHeight + photoBorderTop);
+			centerElement(photoCaption, true, false);
 		}
 		
-		function centerElement(elementToCenter){
-			var elementHeight = elementToCenter.height();
-			var elementWidth = elementToCenter.width();
-			var elementBorderHeight = parseFloat(elementToCenter.css("border-top-width")) + parseFloat(elementToCenter.css("border-bottom-width"));
-			var elementBorderWidth = parseFloat(elementToCenter.css("border-left-width")) + parseFloat(elementToCenter.css("border-right-width"));
-			elementToCenter.css("top", (($(window).height() - elementHeight - elementBorderHeight))/2).css("left", ($(window).width() - elementWidth - elementBorderWidth)/2);
+		function centerElement(elementToCenter, x, y){
+			if(x){
+				var elementWidth = elementToCenter.width();
+				var elementBorderWidth = parseFloat(elementToCenter.css("border-left-width")) + parseFloat(elementToCenter.css("border-right-width"));
+				elementToCenter.css("left", ($(window).width() - elementWidth - elementBorderWidth)/2);
+			}
+			if(y){
+				var elementHeight = elementToCenter.height();
+				var elementBorderHeight = parseFloat(elementToCenter.css("border-top-width")) + parseFloat(elementToCenter.css("border-bottom-width"));
+				elementToCenter.css("top", (($(window).height() - elementHeight - elementBorderHeight))/2)
+			}
 		}
 		
 		function showPhoto(){

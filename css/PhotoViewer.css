@@ -15,7 +15,7 @@ div#LoadingIcon{background: #FFFFFF; border-radius: 15px; height: 300px; overflo
 div#LoadingIcon h2{line-height: 50px; margin: 0px;}
 div#LoadingIcon img{height: 200px; width: 200px;}
 img#Photo{border-width: 15px 15px 85px 15px; border-style: solid; border-color: #FFFFFF; box-shadow: 0 0 50px 30px #000000; display: none; position: absolute; z-index: 1;}
-div#PhotoCaption{display: none; height: 75px; margin: 5px auto; position: absolute; text-align: center; width: 100%; z-index: 2;}
+div#PhotoCaption{display: none; height: 75px; margin: 5px 15px; overflow-x: hidden; overflow-y: auto; position: absolute; text-align: center; z-index: 2;}
 div#PhotoCaption p{margin: 0px;}
 div#PhotoButtonLeft, div#PhotoButtonRight{background: #FFFFFF; display: none; opacity: 0; position: absolute; transition: opacity 1s; z-index: 2;}
 div#PhotoButtonLeft::after, div#PhotoButtonRight::after{font-family: monospace; font-size: 100px;}
